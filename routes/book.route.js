@@ -48,7 +48,7 @@ bookRouter.patch("/update/:id", async(req, res)=>{
     }
 })
 
-bookRouter.delete("/", async(req, res)=>{
+bookRouter.delete("/delete/:id", async(req, res)=>{
     const id= req.params.id;
     const book= await BookModel.findOne({"_id":id});
     const id_in_book= book.userId;
